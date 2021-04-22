@@ -2,7 +2,7 @@ package dev.intx.fb_2011;
 
 import org.junit.jupiter.api.Test;
 
-import static dev.intx.fb_2011.A_DoubleSquares.DoubleSquares.count;
+import static dev.intx.fb_2011.A_DoubleSquares.DoubleSquares.countDoubleSquares;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class A_DoubleSquaresTest {
@@ -26,11 +26,11 @@ public class A_DoubleSquaresTest {
     public void shouldFindSums() {
 
         for (var n : sums) {
-            assertThat(count(n)).isGreaterThan(0);
+            assertThat(countDoubleSquares(n)).isGreaterThan(0);
         }
 
         for (int i = 0; i < sums.length - 1; ++i) {
-            assertThat(count(sums[i] + sums[i + 1])).isGreaterThan(0);
+            assertThat(countDoubleSquares(sums[i] + sums[i + 1])).isGreaterThan(0);
         }
     }
 
@@ -38,7 +38,7 @@ public class A_DoubleSquaresTest {
     public void productShouldBeASum() {
 
         for (int i = 0; i < sums.length - 1; ++i) {
-            assertThat(count(sums[i] * sums[i + 1])).isGreaterThan(0);
+            assertThat(countDoubleSquares(sums[i] * sums[i + 1])).isGreaterThan(0);
         }
     }
 
@@ -46,7 +46,7 @@ public class A_DoubleSquaresTest {
     public void doubleSumIsSum() {
 
         for (var n : sums) {
-            assertThat(count(2 * n)).isGreaterThan(0);
+            assertThat(countDoubleSquares(2 * n)).isGreaterThan(0);
         }
     }
 
@@ -54,7 +54,7 @@ public class A_DoubleSquaresTest {
     public void shouldNotFindSums() {
 
         for (var n : notSums) {
-            assertThat(count(n)).isZero();
+            assertThat(countDoubleSquares(n)).isZero();
         }
     }
 }

@@ -4,7 +4,7 @@ public class A_DoubleSquares {
 
     static class DoubleSquares {
 
-        public static int count(int x) {
+        public static int countDoubleSquares(int x) {
             if (x == 0) {
                 return 1;
             }
